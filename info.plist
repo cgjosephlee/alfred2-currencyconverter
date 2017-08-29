@@ -4,6 +4,8 @@
 <dict>
 	<key>bundleid</key>
 	<string>net.exit4web.currencyconverter</string>
+	<key>category</key>
+	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>089E4F01-0962-4C51-A276-CC83795C7F7F</key>
