@@ -67,6 +67,7 @@ class e4Currency
 		'CAD' => 'Canadian Dollar',
 		'SEK' => 'Swedish Krona',
 		'HKD' => 'Hong Kong Dollar',
+		'MOP' => 'Macanese Pataca',
 		'NOK' => 'Norwegian Krone',
 		'BTC' => 'Bitcoin',
 		'AED' => 'United Arab Emirates Dirham',
