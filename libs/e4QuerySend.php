@@ -46,8 +46,6 @@ class e4QuerySend
 	}
 	public function sendRequest()
 	{
-		if ($this->from == 'BTC' || $this->to == 'BTC')
-			return $this->queryBitcoin();
 		return $this->queryDefault();
 	}
 	protected function queryDefault()
@@ -66,22 +64,6 @@ class e4QuerySend
 			$this->responseFromCurrency = $this->from;
 			$this->responseToAmount = $toAmount;
 			$this->responseToCurrency = $this->to;
-			return $this->valid = true;
-		}
-
-		return $this->valid = false;
-	}
-	protected function queryBitcoin()
-	{
-		$this->requestService = 'BTCrate.com';
-		$response = $this->app->sendHTTPRequest('http://btcrate.com/convert?'.http_build_query(array(
-			'amount' => $this->amount,
-			'from' => $this->from,
-			'to' => $this->to)), null, 300);
-
-		if ($response && $response = @json_decode($response, true))
-		{
-			$this->responseToAmount = $response['converted']*1;
 			return $this->valid = true;
 		}
 
